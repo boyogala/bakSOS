@@ -1,0 +1,21 @@
+
+
+一、安装git
+
+
+二、配置git
+编辑 〜/.gitconfig，其内容与 .git/config 文件中的内容相同，即将 [user] 部分信息添加至 〜/.gitconfig 文件中
+	2.1 全局配置
+	git config --global user.name "boyogala"
+	git config --global user.email "boyogala@outlook.com"
+	2.2 局部配置
+	git config user.name "boyogala"
+	git config user.email "your-email-address"	
+
+
+
+第五步：创建SSH KEY。先看一下你C盘用户目录下有没有.ssh目录，有的话看下里面有没有id_rsa和id_rsa.pub这两个文件，
+有就跳到下一步，没有就通过下面命令创建。
+ssh-keygen -t rsa -C "boyogala@outlook.com"
+
+https://github.com/boyogala/boyogala.github.io.git
