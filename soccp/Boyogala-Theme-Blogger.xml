@@ -1025,7 +1025,7 @@ h2.entry-title {margin-bottom:15px;}
 <b:section class='nbttopmenutop' id='nbttopmenutop' maxwidgets='1' showaddelement='no'>
   <b:widget id='PageList8' locked='false' title='Pages - Menu' type='PageList' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='pageListJson'><![CDATA[{"link1":{"href":"/search/label/运筹优化","position":1,"title":"运筹优化"},"link0":{"href":"http://www.boyogala.us.kg/","position":0,"title":"GOHOME"},"link5":{"href":"/search/label/数学建模","position":5,"title":"数学建模"},"link4":{"href":"/search/label/群体智能","position":4,"title":"群体智能"},"link3":{"href":"/search/label/最优控制","position":3,"title":"最优控制"},"link2":{"href":"/search/label/机器学习","position":2,"title":"机器学习"},"link8":{"href":"/search/label/Policy","position":8,"title":"Policy"},"link7":{"href":"/search/label/我思我在","position":7,"title":"我思我在"},"link6":{"href":"/search/label/焊接数学","position":6,"title":"焊接数学"}}]]></b:widget-setting>
+      <b:widget-setting name='pageListJson'><![CDATA[{"link1":{"href":"/search/label/运筹优化","position":1,"title":"运筹优化"},"link0":{"href":"http://www.boyogala.us.kg/","position":0,"title":"GOHOME"},"link5":{"href":"/search/label/数学建模","position":5,"title":"数学建模"},"link4":{"href":"/search/label/数学|MATHEMATICS","position":4,"title":"数学|MATHEMATICS"},"link3":{"href":"/search/label/最优控制","position":3,"title":"最优控制"},"link2":{"href":"/search/label/机器学习","position":2,"title":"机器学习"},"link8":{"href":"/search/label/POLICY","position":8,"title":"POLICY"},"link7":{"href":"/search/label/我思我在","position":7,"title":"我思我在"},"link6":{"href":"/search/label/群体智能","position":6,"title":"群体智能"}}]]></b:widget-setting>
       <b:widget-setting name='homeTitle'>Home</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
@@ -1117,9 +1117,10 @@ h2.entry-title {margin-bottom:15px;}
       <b:widget-setting name='showDateHeader'>true</b:widget-setting>
       <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
       <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+      <b:widget-setting name='authorLabel'>Posted by BOYOGALA</b:widget-setting>
       <b:widget-setting name='showCommentLink'>true</b:widget-setting>
       <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
-      <b:widget-setting name='showAuthor'>false</b:widget-setting>
+      <b:widget-setting name='showAuthor'>true</b:widget-setting>
       <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
       <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
       <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
@@ -2100,6 +2101,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 
 <div id='rightbarnbt'>
 
+<!-- 删除这一个search标签的功能
 <div class='widget widget_searchnbt'>
 <form class='searchformnbt' expr:action='data:blog.homepageUrl + &quot;search/&quot;' id='searchformnbt' method='get' role='search'>
 <div>
@@ -2109,8 +2111,39 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 </div>
 </form>
 </div>
-
+-->
+  
 <b:section class='sidebarrightarea' id='sidebarrightarea' preferred='yes'>
+  <b:widget id='BlogSearch1' locked='false' title='Search This Blog' type='BlogSearch'>
+    <b:includable id='main'>
+    <!-- only display title if it's non-empty -->
+    <b:if cond='data:title != &quot;&quot;'>
+      <h2 class='title'><data:title/></h2>
+    </b:if>
+
+    <div class='widget-content'>
+      <div expr:id='data:widget.instanceId + &quot;_form&quot;'>
+        <form class='gsc-search-box' expr:action='data:blog.searchUrl'>
+          <b:attr cond='not data:view.isPreview' name='target' value='_top'/>
+          <table cellpadding='0' cellspacing='0' class='gsc-search-box'>
+            <tbody>
+              <tr>
+                <td class='gsc-input'>
+                  <input autocomplete='off' class='gsc-input' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' name='q' size='10' title='search' type='text'/>
+                </td>
+                <td class='gsc-search-button'>
+                  <input class='gsc-search-button' expr:value='data:messages.search' title='search' type='submit'/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    <b:include name='quickedit'/>
+  </b:includable>
+  </b:widget>
   <b:widget id='Translate1' locked='false' title='Translate' type='Translate'>
     <b:widget-settings>
       <b:widget-setting name='displayMode'>VERTICAL</b:widget-setting>
@@ -2270,7 +2303,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 
 <div id='copyinfonbt'>
 <!-- Do not edit or remove credits without our permission: btemplates.com/author/new-blogger-themes -->
-Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> | Powered by <a href='http://www.blogger.com/'>Blogger</a><br/>Design by <a href='http://www.vivathemes.com/' target='_blank'>Viva Themes</a> | Blogger Theme by <a href='http://btemplates.com/author/new-blogger-themes/' rel='nofollow' target='_blank' title='NewBloggerThemes.com'>NewBloggerThemes.com</a>
+Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> | Powered by <a href='http://www.blogger.com/'>Blogger</a><br/>Design by <a href='http://www.vivathemes.com/' target='_blank'>Viva Themes</a> | Blogger Theme by <a href='http://btemplates.com/author/new-blogger-themes/' rel='nofollow' target='_blank' title='NewBloggerThemes.com'>NewBloggerThemes.com</a><br/> <a href='https://www.youtube.com/channel/UCdn36X2lDIJAQXRV6MmTltQ' target='_blank'> YOUTUBE CHANNEL </a> | <a href='https://www.youtube.com/channel/UCdn36X2lDIJAQXRV6MmTltQ' rel='nofollow' target='_blank' title='博優旮旯-BOYOGALA'> 博優旮旯-BOYOGALA : 博采众长, 优化旮旯 </a> <br/> <a href='https://qm.qq.com/q/anwzJlOShG' target='_blank'> QQ : 1012994395 </a> | <a href='mailto:boyogala@outlook.com' rel='nofollow' target='_blank' title='CORRESPONDING EMAIL'> EMAIL : boyogala@outlook.com </a>
 </div>
 
 </div>
