@@ -1,4 +1,0 @@
-# backup softwares
-
-
-bakSolvers
