@@ -41,7 +41,7 @@ set_attribute(DBS, "linear_solver", "ma57")
 ##############https://panua.ch/pardiso##############################
 ### 需申请一个月试用或者是学术购买
 # 设置 动态链接库 libpardiso.dll
-set_attribute(DBS, "hsllib", "YOUR_PATH\\lib\\libpardiso.dll")
+set_attribute(DBS, "pardisolib", "YOUR_PATH\\lib\\libpardiso.dll")
 # 设置 linear_solver 为 pardiso
 set_attribute(DBS, "linear_solver", "pardiso")
 # 设置 显示 Pardiso 的求解过程
